@@ -61,13 +61,13 @@ function PLUGIN:SchemaInitialized()
 					if default then
 						nut.util.Notify( "No ID Itemdata, Showing default id.", client )
 					end
-					target:ShowCID( client, data.Digits, data.Owner, data.Model, data.Forged )
+					target:ShowCID( client, data.Digits or "000000", data.Owner or client:GetName(), data.Model or client:GetModel(), data.Forged or false )
 				end
 			end
 		end
 	end
 	OPTION.itemsRequired = {
-		["cid"] = 1,
+		["cid2"] = 1,
 	}
 	OPTION.itemsTake = {}
 	OPTIONS:Register(OPTION)
